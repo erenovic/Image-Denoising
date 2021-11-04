@@ -1,6 +1,4 @@
-%--------------------------------------------------------------------------
-% q1
-%--------------------------------------------------------------------------
+
 addpath('bm3d_matlab_package/bm3d');
 
 close all; clear all; clc
@@ -35,9 +33,7 @@ title("Noised Y Channel of the Image");
 subplot(1,2,2); imshow(uint8(noisedRGB));
 title("Noised RGB Image");
 
-%--------------------------------------------------------------------------
-% q2
-%--------------------------------------------------------------------------
+
 % Choosing [20, 424] to [94, 498] area to calculate sample variance 
 % of noise. (for Bilateral filter)
 flatPatch = noisedY(424:498, 20:94);
@@ -89,9 +85,7 @@ figure("Name", "Filtered Y Channel 3");
 montage(YfilteredArray3);
 title("Non-local Means Filtered (left), BM3D Filtered (right)");
 
-%--------------------------------------------------------------------------
-% q3
-%--------------------------------------------------------------------------
+
 % PSNR & SSIM Calculation
 
 PSNRGauss = psnr(YgaussianFiltered, uint8(y));
@@ -117,9 +111,7 @@ SSIMBM3D = ssim(YBM3DFiltered, uint8(y));
 % [PSNRNonLoc, paramNonLoc] = detectMaxPSNR("nlm", uintNoisy, uint8(y));
 % [PSNRBM3D, paramBM3D] = detectMaxPSNR("BM3D", uintNoisy, uint8(y));
 
-%--------------------------------------------------------------------------
-% q4
-%--------------------------------------------------------------------------
+
 % Resulting RGB ImagesRGBgaussian = xYcbcr;
 RGBgaussian = xYcbcr;
 RGBgaussian(:, :, 1) = YgaussianFiltered;
@@ -161,9 +153,7 @@ figure("Name", "Filtered RGB Images 3");
 montage(RGBfilteredArray3, "Size", [1 2]);
 title("Non-local Means Filtered (middle), BM3D Filtered (right)");
 
-%--------------------------------------------------------------------------
-% Functions used in this problem are below this line
-%--------------------------------------------------------------------------
+
 % Find maximum PSNR giving deviation parameter
 function [maxPSNR, maxParams] = detectMaxPSNR(func, noisy, original)
     maxPSNR = 0;

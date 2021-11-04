@@ -1,6 +1,4 @@
-%--------------------------------------------------------------------------
-% q1
-%--------------------------------------------------------------------------
+
 close all; clear all; clc
 nfft = 512;
 % Read image
@@ -67,9 +65,7 @@ figure("Name", "Wiener Filter Output");
 montage(WienerImgArray, "Size", [1 3]); 
 title("Original Image (left), Noisy Image (middle), Output of IIR Wiener Filter (right)");
 
-%--------------------------------------------------------------------------
-% q2
-%--------------------------------------------------------------------------
+
 % Window size = 5
 M = floor(5/2);
 
@@ -108,9 +104,6 @@ title("Original Image (left), Noisy Image (middle), Output of Adaptive IIR Wiene
 % subplot(1,2,2); imshow(RGBAdaptiveOut); 
 % title("Output of Adaptive IIR Wiener Filter");
 
-%--------------------------------------------------------------------------
-% q3
-%--------------------------------------------------------------------------
 
 PSNRadaptive = psnr(RGBAdaptiveOut, x);
 PSNRIIRWiener = psnr(RGBIIRWienerOut, x);

@@ -1,0 +1,12 @@
+The original source code and the paper can be found in http://www.cs.tut.fi/~foi/GCF-BM3D/.
+
+1-) Go to the website above, and download the source code by clicking "Download BM3D Matlab software v3.0.8, released 30 January 2021".
+2-) Extract the content of the zip file to the folder where your code is.
+3-) Paste the given code in your source file:
+		addpath('bm3d_matlab_package/bm3d')
+	By this code, you tell Matlab that it also should look at the given directory for necessary codes.
+4-) Apply the filter. An example is the following:
+		img_filtered = BM3D(img_noisy, stddev);
+	Here, "img_noisy" is the noisy image and "stddev" is the standard deviation of the added noise.
+	
+P.S.: You do not need to include "bm3d_matlab_package" folder when you submit your homework.
